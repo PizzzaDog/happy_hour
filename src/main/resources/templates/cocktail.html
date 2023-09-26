@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 60%;
+        margin: auto;
+    }
+</style>
+<body>
+<div>
+    <form action="/cocktail" method="post">
+        <label for="fname">Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Cocktail name">
+
+        <label for="fmain">Main alcohol</label>
+        <input type="text" id="fmain" name="fmain" placeholder="If you know...">
+
+        <label for="fdescription">Main alcohol</label>
+        <input type="text" id="fdescription" name="fdescription" placeholder="Some additional information?">
+
+        <label for="flink">Link to receipt or some video</label>
+        <input type="text" id="flink" name="flink" placeholder="If you want ultra puper beautifully">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
+
+

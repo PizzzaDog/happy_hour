@@ -35,18 +35,28 @@
 </style>
 <body>
 <div>
-    <form action="/cocktail" method="post">
-        <label for="fname">Name</label>
-        <input type="text" id="fname" name="fname" placeholder="Cocktail name">
+    <form action="/cocktail" method="post" th:object="${cocktailCreate}" >
+        <label for="name">Name</label>
+        <input  type="text"
+                id="name"
+                name="name"
+                placeholder="Cocktail name"
+                th:field="${cocktailCreate.name}">
 
-        <label for="fmain">Main alcohol</label>
-        <input type="text" id="fmain" name="fmain" placeholder="If you know...">
+        <label for="description">Main alcohol</label>
+        <input type="text" id="description" name="description" placeholder="If you know...">
 
-        <label for="fdescription">Main alcohol</label>
-        <input type="text" id="fdescription" name="fdescription" placeholder="Some additional information?">
+        <label for="mainAlco">Main alcohol</label>
+        <input type="text"
+               id="mainAlco"
+               name="mainAlco"
+               placeholder="Some additional information?">
 
-        <label for="flink">Link to receipt or some video</label>
-        <input type="text" id="flink" name="flink" placeholder="If you want ultra puper beautifully">
+        <label for="link">Link to receipt or some video</label>
+        <input type="text"
+               id="link" name="link"
+               placeholder="If you want ultra puper beautifully"
+               th:value="${cocktailCreate.link}">
 
         <input type="submit" value="Submit">
     </form>

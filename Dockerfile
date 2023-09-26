@@ -1,9 +1,11 @@
-FROM openjdk:11-jdk-slim as builder
+#FROM openjdk:11-jdk-slim as builder
+FROM maven:3.8.1-adoptopenjdk-11 as builder
 WORKDIR /opt/app
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
+COPY pom.xml .
+RUN mvn -B -f pom.xml dependency:go-offline
 COPY ./src ./src
-RUN ./mvnw clean install
+RUN mvn -B install
+
 
 FROM openjdk:11-jdk-slim
 WORKDIR /opt/app

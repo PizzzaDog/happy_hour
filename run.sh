@@ -1,3 +1,4 @@
+git pull
 docker stop happy_con || true
 docker rm happy_con || true
 docker build -t happy .

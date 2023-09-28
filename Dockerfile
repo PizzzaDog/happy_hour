@@ -7,8 +7,8 @@ COPY ./src ./src
 RUN mvn -B install
 
 
-#FROM openjdk:11-jdk-slim
-#WORKDIR /opt/app
-#COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
+FROM openjdk:11-jdk-slim
+WORKDIR /opt/app
+COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
 EXPOSE 8091
 ENTRYPOINT ["java", "-jar", "/opt/app/*.jar"]

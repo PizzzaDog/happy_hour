@@ -18,4 +18,9 @@ public class SisterController {
         s.setLabels(List.of("Лох", "Лингвист", "Почти фронтер"));
         return s;
     }
+
+    @GetMapping("/ulyana/hello")
+    public String getHello() {
+        return "Hello mutherfucker";
+    }
 }
